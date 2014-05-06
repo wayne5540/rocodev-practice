@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   #just switch to practice2 => RESTful topics
 
   def index
-    @topic = Topics.all
+    @topic = Topic.all
   end
 
   def show
