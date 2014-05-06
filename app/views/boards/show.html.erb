@@ -1,2 +1,5 @@
-<h1>Boards#show</h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<h1><%= @board.name %></h1>
+<h2><%= @board.description %></h2>
+<%= link_to("Edit", edit_board_path(@board)) %>
+<%= link_to("Delete", board_path(@board), :method => :delete, :confirm => "You Sure?") %>
+
