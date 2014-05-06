@@ -1,4 +1,6 @@
 RocodevPractice::Application.routes.draw do
+  root "boards#index"
+  resources :boards
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
