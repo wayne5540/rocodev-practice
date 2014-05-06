@@ -20,6 +20,24 @@ class ApplicationController < ActionController::Base
     end  
   end
 
+  def admin_required
+    login_required
+    unless current_user.is_admin
+      respond_to do |format|
+        format.html  {
+          redirect_to root_path
+          flash[:danger] = "You are not authorized"
+        }
+        format.js{
+          render :partial => "common/not_admin"
+        }
+        format.all {
+          head(:unauthorized)
+        }
+      end
+    end  
+  end
+
 
 
 protected

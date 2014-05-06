@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
 
-  before_action :login_required, :only => [:new, :create, :edit, :update, :destroy]
+  before_action :admin_required, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @boards = Board.all

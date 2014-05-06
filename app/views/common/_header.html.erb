@@ -1,6 +1,6 @@
 <%= link_to("board index", boards_path) %>
-<%= link_to("New Board", new_board_path) %>
 <% if current_user %>
+  <%= link_to("New Board", new_board_path) if current_user.is_admin%>
   <%= link_to("Logout", destroy_user_session_path, :method => :delete) %>
 <% else %>
   <%= link_to("註冊",new_user_registration_path) %>
