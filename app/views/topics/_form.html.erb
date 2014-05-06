@@ -1,0 +1,5 @@
+<%= simple_form_for [@board, @topic] do |f|  %>
+  <%= f.input :title, :required => true %>
+  <%= f.input :content, :required => true %>
+  <%= f.submit "Submit", :disable_with => "Submiting..." %>
+<% end %>

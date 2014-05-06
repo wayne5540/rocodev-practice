@@ -1,2 +1,16 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<h1>Topics list</h1>
+
+<table>
+    <thead>
+      <td>#</td>
+      <td>title</td>
+      <td>content</td>
+    </thead>
+  <% @topics.each do |topic| %>
+    <tr>
+      <td><%= topic.id %></td>
+      <td><%= link_to(topic.title, [@board, topic]) %></td>
+      <td><%= topic.content %></td>
+    </tr>
+  <% end %>
+</table>

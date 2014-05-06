@@ -1,2 +1,10 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+
+<article>
+  <header><%= @topic.title %></header>
+  <p><%= @topic.content %></p>
+</article>
+
+<%= link_to("edit", edit_board_topic_path(@board, @topic)) %>
+<%= link_to("Delete", board_topic_path(@board, @topic), :method => :delete, :confirm => "You sure?") %>
+
+

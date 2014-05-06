@@ -3,3 +3,9 @@
 <%= link_to("Edit", edit_board_path(@board)) %>
 <%= link_to("Delete", board_path(@board), :method => :delete, :confirm => "You Sure?") %>
 
+<%= link_to("+Topic", new_board_topic_path(@board)) %>
+
+<h2>Topics</h2>
+<ul>
+  <%= render "topic_list" %>
+</ul>
