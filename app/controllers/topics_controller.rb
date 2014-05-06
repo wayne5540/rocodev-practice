@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
 
   before_action :find_board
+  before_action :login_required, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
     @topics = @board.topics.all
