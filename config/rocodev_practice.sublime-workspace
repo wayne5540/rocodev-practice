@@ -1,0 +1,415 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dr",
+				"drinked"
+			],
+			[
+				"t",
+				"tbody	Tag"
+			],
+			[
+				"drink",
+				"drink"
+			],
+			[
+				"want",
+				"wanted_drinks"
+			],
+			[
+				"la",
+				"label"
+			],
+			[
+				"user",
+				"user_drinks"
+			],
+			[
+				"has",
+				"has_many"
+			],
+			[
+				"wanted_",
+				"wanted_drinks"
+			],
+			[
+				"drin",
+				"drink_path"
+			],
+			[
+				"re",
+				"redirect_to"
+			],
+			[
+				"wa",
+				"wanted"
+			],
+			[
+				"che",
+				"checked_list"
+			],
+			[
+				"c",
+				"checked_list"
+			],
+			[
+				"chec",
+				"checked_list"
+			],
+			[
+				"check",
+				"check_box"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"D",
+				"Drink"
+			],
+			[
+				"con",
+				"content_tag"
+			],
+			[
+				"li",
+				"li"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"list",
+				"list-group-item"
+			],
+			[
+				"form",
+				"form-signin"
+			],
+			[
+				"navbar",
+				"navbar-brand"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"M",
+				"Mtype"
+			],
+			[
+				"ma",
+				"material"
+			],
+			[
+				"h",
+				"h1	Tag"
+			],
+			[
+				"mater",
+				"materials"
+			],
+			[
+				"be",
+				"belongs_to"
+			],
+			[
+				"ba",
+				"base_material"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"contro",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 384.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/wayne/.ssh/id_rsa.pub",
+		"/Users/wayne/.ssh/id_rsa",
+		"/Users/wayne/rails_projects/starbucks/app/models/user.rb",
+		"/Users/wayne/rails_projects/starbucks/app/controllers/drinks_controller.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/show.html.erb",
+		"/Users/wayne/rails_projects/starbucks/db/migrate/20140503082639_add_drinked_to_user_drink.rb",
+		"/Users/wayne/rails_projects/starbucks/app/models/drink.rb",
+		"/Users/wayne/rails_projects/starbucks/app/models/user_drink.rb",
+		"/Users/wayne/rails_projects/starbucks/config/routes.rb",
+		"/Users/wayne/rails_projects/starbucks/app/controllers/users_controller.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/common/_navbar.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/users/wanted_drinks.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/users/show.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/common/_not_logined.js.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/edit.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/new.html.erb",
+		"/Users/wayne/rails_projects/starbucks/Gemfile",
+		"/Users/wayne/rails_projects/starbucks/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/users/index.html.erb",
+		"/Users/wayne/rails_projects/starbucks/db/migrate/20140502132031_add_drinks_count_to_user.rb",
+		"/Users/wayne/rails_projects/starbucks/app/models/mtype.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/layouts/application.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/assets/javascripts/drinks.js.coffee",
+		"/Users/wayne/rails_projects/starbucks/config/initializers/devise.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/static_pages/contact.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/assets/stylesheets/static_pages.css.scss",
+		"/Users/wayne/rails_projects/starbucks/app/helpers/users_helper.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/index.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/common/_drinks_list.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/common/_fb_share.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/assets/stylesheets/drinks.css.scss",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/_facebook_share.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/_disqus.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/_disqus_count.html.erb",
+		"/Users/wayne/rails_projects/starbucks/db/seeds.rb",
+		"/Users/wayne/rails_projects/starbucks/app/helpers/drinks_helper.rb",
+		"/Users/wayne/rails_projects/starbucks/app/controllers/materials_controller.rb",
+		"/Users/wayne/rails_projects/starbucks/app/views/static_pages/home.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/assets/stylesheets/custom.css.scss",
+		"/Users/wayne/rails_projects/starbucks/app/views/devise/sessions/new.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/assets/stylesheets/materials.css.scss",
+		"/Users/wayne/rails_projects/starbucks/app/views/common/_user_dropdown_nav.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/_materials.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/assets/javascripts/application.js",
+		"/Users/wayne/rails_projects/starbucks/app/assets/stylesheets/application.css",
+		"/Users/wayne/rails_projects/starbucks/app/views/drinks/_materials.hyml.erb",
+		"/Users/wayne/rails_projects/starbucks/app/views/materials/new.html.erb",
+		"/Users/wayne/rails_projects/starbucks/app/models/drink_material.rb",
+		"/Users/wayne/rails_projects/starbucks/app/models/material.rb",
+		"/Users/wayne/rails_projects/starbucks/app/controllers/application_controller.rb",
+		"/Users/wayne/rails_projects/starbucks/db/migrate/20140426045007_create_drink_materials.rb",
+		"/Users/wayne/rails_projects/starbucks/db/migrate/20140425074841_create_mtypes.rb",
+		"/Users/wayne/rails_projects/starbucks/db/migrate/20140423154915_create_materials.rb",
+		"/Users/wayne/rails_projects/starbucks/db/migrate/20140425085018_create_drinks.rb",
+		"/Users/wayne/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/wayne/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mail",
+			"糖包",
+			"罐裝肉桂粉",
+			"罐裝巧克力粉",
+			"經典巧克力粉",
+			"抹茶粉",
+			"\"\"]",
+			"鮮奶油",
+			"星冰樂巧克力碎片",
+			"sugar",
+			"罐裝肉桂粉",
+			"cinnamon",
+			"chocolate",
+			"dark_chocolate",
+			"經典巧克力粉",
+			"greentea",
+			"cream",
+			"creamd",
+			"焦糖",
+			"香草",
+			"焦糖",
+			"input_html",
+			"table",
+			"text_area",
+			"\n",
+			"id",
+			"one-to-"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"user",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"model/use",
+				"app/models/user.rb"
+			],
+			[
+				"model/dr",
+				"app/models/drink.rb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"usercontr",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"appl",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"see",
+				"db/seeds.rb"
+			],
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"inde",
+				"app/views/drinks/index.html.erb"
+			],
+			[
+				"notlog",
+				"app/views/common/_not_logined.js.erb"
+			],
+			[
+				"",
+				"app/controllers/drinks_controller.rb"
+			],
+			[
+				"drink",
+				"app/controllers/drinks_controller.rb"
+			],
+			[
+				"dri",
+				"app/models/drink.rb"
+			],
+			[
+				"mater",
+				"app/controllers/materials_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/wayne/rails_projects/starbucks/lib/tasks/starbucks.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 155.0,
+	"status_bar_visible": true
+}
