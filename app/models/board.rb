@@ -5,8 +5,4 @@ class Board < ActiveRecord::Base
   validates :description, :presence => true
 
 
-  def editable_by?(user)
-    user && user == owner
-  end
-
 end
