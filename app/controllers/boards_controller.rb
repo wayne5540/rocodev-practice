@@ -1,4 +1,7 @@
 class BoardsController < ApplicationController
+
+  before_action :login_required, :only => [:new, :create, :edit, :update, :destroy]
+
   def index
     @boards = Board.all
   end
@@ -8,11 +11,11 @@ class BoardsController < ApplicationController
   end
 
   def new
-    @board = Board.new
+    @board = current_user.boards.new
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.new(board_params)
     if @board.save
       redirect_to board_path(@board)
       flash[:success] = "Board created!"
@@ -23,11 +26,11 @@ class BoardsController < ApplicationController
   end
 
   def edit
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
   end
 
   def update
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
     if @board.update(board_params)
       redirect_to board_path(@board)
       flash[:success] = "Update success!"
@@ -38,7 +41,7 @@ class BoardsController < ApplicationController
   end
 
   def destroy
-    @board = Board.find(params[:id])
+    @board = current_user.boards.find(params[:id])
     @board.destroy
     redirect_to boards_path
     flash[:success] = "Delete success!"

@@ -4,7 +4,8 @@
   <p><%= @topic.content %></p>
 </article>
 
-<%= link_to("edit", edit_board_topic_path(@board, @topic)) %>
-<%= link_to("Delete", board_topic_path(@board, @topic), :method => :delete, :confirm => "You sure?") %>
-
+<% if current_user && @topic.editable_by?(current_user) %>
+  <%= link_to("edit", edit_board_topic_path(@board, @topic)) %>
+  <%= link_to("Delete", board_topic_path(@board, @topic), :method => :delete, :confirm => "You sure?") %>
+<% end %>
 

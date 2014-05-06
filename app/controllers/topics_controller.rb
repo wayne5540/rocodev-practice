@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 
-  before_action :find_board
+  before_action :find_board, :exclude => [:edit, :update, :destroy]
   before_action :login_required, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -12,11 +12,11 @@ class TopicsController < ApplicationController
   end
 
   def edit
-    @topic = @board.topics.find(params[:id])
+    @topic = current_user.topics.find(params[:id])
   end
 
   def update
-    @topic = @board.topics.find(params[:id])
+    @topic = current_user.topics.find(params[:id])
     if @topic.update(topic_parems)
       redirect_to board_topic_path(@board, @topic)
       flash[:success] = "update success!"
@@ -32,6 +32,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = @board.topics.new(topic_parems)
+    @topic.author = current_user
     if @topic.save
       redirect_to board_topic_path(@board, @topic)
       flash[:success] = "create success!"
@@ -42,7 +43,7 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = @board.topics.find(params[:id])
+    @topic = current_user.topics.find(params[:id])
     @topic.destroy
     redirect_to board_topics_path
     flash[:success] = "Delete success!"
