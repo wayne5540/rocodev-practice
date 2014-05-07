@@ -52,7 +52,7 @@ class TopicsController < ApplicationController
 private
   
   def topic_parems
-    params.require(:topic).permit(:title, :content, :board_id, :user_id)
+    params.require(:topic).permit(:title, :content, :board_id, :user_id, :avatar)
   end
 
   def find_board

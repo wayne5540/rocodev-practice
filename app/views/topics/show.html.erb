@@ -8,4 +8,7 @@
   <%= link_to("edit", edit_board_topic_path(@board, @topic)) %>
   <%= link_to("Delete", board_topic_path(@board, @topic), :method => :delete, :confirm => "You sure?") %>
 <% end %>
+<%= image_tag @topic.avatar.url %>
+<%= image_tag @topic.avatar.url(:medium) %>
+<%= image_tag @topic.avatar.url(:thumb) %>
 
