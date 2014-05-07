@@ -1,10 +1,12 @@
 <h1>Boards list</h1>
 
-<table>
+<div class="panel panel-default">
+  <div class="panel-heading">Boards</div>
+  <table class="table">
     <thead>
       <td>#</td>
-      <td>name</td>
-      <td>description</td>
+      <td>Board Name</td>
+      <td>Description</td>
     </thead>
   <% @boards.each do |board| %>
     <tr>
@@ -13,4 +15,6 @@
       <td><%= board.description %></td>
     </tr>
   <% end %>
-</table>
+  </table>  
+</div>
+
