@@ -34,6 +34,7 @@ gem "bootstrap_helper", ">= 4.2.2.1"
 gem "simple_form", "~> 3.0.1" 
 gem "will_paginate", "3.0.3"
 gem "compass-rails", "~> 1.1.2"
+gem "paperclip", "~> 4.1"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
