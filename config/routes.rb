@@ -2,7 +2,9 @@ RocodevPractice::Application.routes.draw do
   devise_for :users
   root "boards#index"
   resources :boards do
-    resources :topics
+    resources :topics do
+      post 'image_destroy', on: :member
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

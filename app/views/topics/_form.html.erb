@@ -2,5 +2,8 @@
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
+  <% if @topic.avatar.exists? %>
+   <%= link_to("delete Image", image_destroy_board_topic_path(@board, @topic), :method => :post) %>
+  <% end %>
   <%= f.submit "Submit", :disable_with => "Submiting..." %>
 <% end %>

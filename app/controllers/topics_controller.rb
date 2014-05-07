@@ -49,6 +49,13 @@ class TopicsController < ApplicationController
     flash[:success] = "Delete success!"
   end
 
+  def image_destroy
+    @topic = current_user.topics.find(params[:id])
+    @topic.delete_image
+    redirect_to root_path
+    flash[:success] = "delete image success"
+  end
+
 
 private
   
