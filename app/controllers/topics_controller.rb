@@ -49,6 +49,7 @@ class TopicsController < ApplicationController
     flash[:success] = "Delete success!"
   end
 
+
 private
   
   def topic_parems

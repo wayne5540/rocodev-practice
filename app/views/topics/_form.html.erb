@@ -2,11 +2,5 @@
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
-  <% if !@topic.avatar.blank? %>
-    <div>
-      <%= image_tag @topic.avatar.url(:thumb) %>
-      <%= link_to("Delete Image", "#") %>
-    </div>
-  <% end %>
   <%= f.submit "Submit", :disable_with => "Submiting..." %>
 <% end %>
