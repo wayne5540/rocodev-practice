@@ -1,10 +1,6 @@
 
 <div class="page-header">
   <h1><%= @topic.title %>  <small>- Post by <%= @topic.author.name %>； -Board: <%= @topic.board.name %></small></h1>
-  <% if current_user && @topic.editable_by?(current_user) %>
-    <%= link_to("edit", edit_board_topic_path(@board, @topic), :class => "btn btn-default" ) %>
-    <%= link_to("Delete", board_topic_path(@board, @topic), :method => :delete, :confirm => "You sure?", :class => "btn btn-default") %>
-  <% end %>
 </div>
 
 <div class="row">
