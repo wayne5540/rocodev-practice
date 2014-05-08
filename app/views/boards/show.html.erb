@@ -2,10 +2,6 @@
 <div class="page-header">
   <h1><%= @board.name %></h1>
   <p><%= @board.description %></p>
-  <% if current_user && current_user.is_admin %>
-  <%= link_to("Edit", edit_board_path(@board)) %>
-  <%= link_to("Delete", board_path(@board), :method => :delete, :confirm => "You Sure?") %>
-<% end %>
 </div>
 
 

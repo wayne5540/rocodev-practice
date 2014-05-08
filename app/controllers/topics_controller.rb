@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 
-  before_action :find_board, :exclude => [:edit, :update, :destroy]
+  before_action :find_board
   before_action :login_required, :only => [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -9,21 +9,6 @@ class TopicsController < ApplicationController
 
   def show
     @topic = @board.topics.find(params[:id])
-  end
-
-  def edit
-    @topic = current_user.topics.find(params[:id])
-  end
-
-  def update
-    @topic = current_user.topics.find(params[:id])
-    if @topic.update(topic_parems)
-      redirect_to board_topic_path(@board, @topic)
-      flash[:success] = "update success!"
-    else
-      render :edit
-      flash[:warning] = "update failed"
-    end
   end
 
   def new
@@ -41,14 +26,6 @@ class TopicsController < ApplicationController
       flash[:warning] = "create failed"
     end
   end
-
-  def destroy
-    @topic = current_user.topics.find(params[:id])
-    @topic.destroy
-    redirect_to board_topics_path
-    flash[:success] = "Delete success!"
-  end
-
 
 private
   
