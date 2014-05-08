@@ -9,6 +9,9 @@ RocodevPractice::Application.routes.draw do
   end
   namespace :account do
     resources :topics
+    resources :boards do
+      resources :topics
+    end
   end 
 
   # The priority is based upon order of creation: first created -> highest priority.

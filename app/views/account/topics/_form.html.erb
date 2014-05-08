@@ -1,4 +1,4 @@
-<%= simple_form_for [@board, @topic] do |f|  %>
+<%= simple_form_for [:account, @board, @topic] do |f|  %>
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
