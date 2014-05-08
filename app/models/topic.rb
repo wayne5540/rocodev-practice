@@ -6,7 +6,7 @@ class Topic < ActiveRecord::Base
 
 
   #paperclips
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/:style/missing.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/missing.png"
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   attr_accessor :remove_avatar
 
