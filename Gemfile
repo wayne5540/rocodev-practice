@@ -43,7 +43,7 @@ end
 
 # Use sqlite3 as the database for Active Record
 group :development do
-#  gem 'sqlite3'
+  gem 'sqlite3'
 #  gem "capistrano", "2.15.5"
 #  gem "capistrano-ext"
 #  gem "cape"
@@ -52,10 +52,10 @@ group :development do
   gem 'capistrano-unicorn', :require => false
   gem "cape"
 end
-gem 'mysql2'
-#group :production do
-#  gem 'mysql2'
-#end
+
+group :production do
+  gem 'mysql2'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
