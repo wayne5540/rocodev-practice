@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-require 'rvm-capistrano'
+require 'rvm/capistrano'
 default_environment["PATH"] = "/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin"
 
 set :application, "my_project"
@@ -20,9 +20,9 @@ set :git_shallow_clone, 1
 set :use_sudo, false
 set :rvm_ruby_string, '2.0.0'
 
-role :web, "my_project.cc"                          # Your HTTP server, Apache/etc
-role :app, "my_project.cc"                         # This may be the same as your `Web` server
-role :db,  "my_project.cc"   , :primary => true # This is where Rails migrations will run
+role :web, "106.186.30.53"                          # Your HTTP server, Apache/etc
+role :app, "106.186.30.53"                         # This may be the same as your `Web` server
+role :db,  "106.186.30.53"   , :primary => true # This is where Rails migrations will run
 
 set :deploy_env, "production"
 set :rails_env, "production"

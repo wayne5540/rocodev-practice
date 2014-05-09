@@ -44,8 +44,12 @@ end
 # Use sqlite3 as the database for Active Record
 group :development do
   gem 'sqlite3'
-  gem "capistrano"
+#  gem "capistrano", "2.15.5"
+#  gem "capistrano-ext"
+#  gem "cape"
+  gem "capistrano", "2.15.4"
   gem "capistrano-ext"
+  gem 'capistrano-unicorn', :require => false
   gem "cape"
 end
 
