@@ -9,9 +9,9 @@
   <% @topics.each do |topic| %>
     <tr>
       <td><%= topic.id %></td>
-      <td><%= link_to(topic.title, [topic.board, topic]) %></td>
+      <td><%= link_to(topic.title, board_topic_path(topic, topic.board_id)) %></td>
       <td><%= topic.content %></td>
-      <td><%= link_to("edit", edit_account_topic_path(topic)) %> <%= link_to("delete", account_topic_path(topic), :method => :delete, :confirm => "Are you sure?") %></td>
+      <td><%= link_to("edit", edit_account_topic_path(topic.board_id, topic)) %> <%= link_to("delete", account_topic_path(topic.board_id, topic), :method => :delete, :confirm => "Are you sure?") %></td>
     </tr>
   <% end %>
 </table>
