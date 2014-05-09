@@ -1,5 +1,5 @@
 class Account::TopicsController < ApplicationController
-  before_action :find_board, :except => [:index, :edit, :update, :destroy] 
+  #before_action :find_board, :except => [:index, :edit, :update, :destroy] 
   before_action :login_required
 
   def index
@@ -29,14 +29,14 @@ class Account::TopicsController < ApplicationController
   end
 
   def new
-    @topic = @board.topics.new
+    @topic = current_user.topics.new
   end
 
   def create
-    @topic = @board.topics.new(topic_parems)
-    @topic.author = current_user
+    @topic = current_user.topics.new(topic_parems)
+#    @topic.author = current_user
     if @topic.save
-      redirect_to board_topic_path(@board, @topic)
+      redirect_to board_topic_path(@topic.board_id, @topic)
       flash[:success] = "create success!"
     else
       render :new
