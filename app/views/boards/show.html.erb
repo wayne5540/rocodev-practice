@@ -9,8 +9,8 @@
 
 
 <h2>Topics   <%= link_to("+New Topic", new_board_topic_path(@board), :class => "btn btn-mini btn-success" ) %></h2>
+
 <div class="panel panel-default">
-  <div class="list-group">
-    <%= render "topic_list" %>
-  </div>
+  <div class="panel-heading">Topics</div>
+  <%= render "topic_list" %>
 </div>

@@ -1,17 +1,18 @@
 <h1>Topics list</h1>
-
-<table>
+<div class="panel panel-default">
+  <table class="table">
     <thead>
       <td>#</td>
       <td>title</td>
       <td>content</td>
     </thead>
-  <% @topics.each do |topic| %>
-    <tr>
-      <td><%= topic.id %></td>
-      <td><%= link_to(topic.title, [topic.board, topic]) %></td>
-      <td><%= topic.content %></td>
-      <td><%= link_to("edit", edit_account_topic_path(topic)) %> <%= link_to("delete", account_topic_path(topic), :method => :delete, :confirm => "Are you sure?") %></td>
-    </tr>
-  <% end %>
-</table>
+    <% @topics.each do |topic| %>
+      <tr>
+        <td><%= topic.id %></td>
+        <td><%= link_to(topic.title, [topic.board, topic]) %></td>
+        <td><%= topic.content %></td>
+        <td><%= link_to("edit", edit_account_topic_path(topic)) %> <%= link_to("delete", account_topic_path(topic), :method => :delete, :confirm => "Are you sure?") %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
