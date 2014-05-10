@@ -17,15 +17,8 @@ module Account::TopicsHelper
   end
 
   def render_board_topic_path(topic)
-    board_topic_path(topic, topic.board_id)
+    board_topic_path(topic.board_id, topic)
   end
 
-  def render_edit_account_topic_path(topic)
-    edit_account_topic_path(topic.board_id, topic)
-  end
-
-  def render_account_topic_path(topic)
-    account_topic_path(topic.board_id, topic)   
-  end
 
 end

@@ -12,7 +12,7 @@ class Account::TopicsController < ApplicationController
 
   def update
     @topic = current_user.topics.find(params[:id])
-    if @topic.update(topic_parems)
+    if @topic.update(topic_params)
       redirect_to account_topics_path
       flash[:success] = "update success!"
     else
@@ -33,7 +33,7 @@ class Account::TopicsController < ApplicationController
   end
 
   def create
-    @topic = current_user.topics.new(topic_parems)
+    @topic = current_user.topics.new(topic_params)
 #    @topic.author = current_user
     if @topic.save
       redirect_to board_topic_path(@topic.board_id, @topic)
@@ -46,7 +46,7 @@ class Account::TopicsController < ApplicationController
 
 private
   
-  def topic_parems
+  def topic_params
     params.require(:topic).permit(:title, :content, :board_id, :user_id, :avatar, :remove_avatar)
   end
 
