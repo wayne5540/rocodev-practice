@@ -1,17 +1,17 @@
 <h1>Topics list</h1>
 
 <table>
-    <thead>
-      <td>#</td>
-      <td>title</td>
-      <td>content</td>
-    </thead>
+  <thead>
+    <td>#</td>
+    <td>title</td>
+    <td>content</td>
+  </thead>
   <% @topics.each do |topic| %>
-    <tr>
-      <td><%= topic.id %></td>
-      <td><%= link_to(topic.title, board_topic_path(topic, topic.board_id)) %></td>
-      <td><%= topic.content %></td>
-      <td><%= link_to("edit", edit_account_topic_path(topic.board_id, topic)) %> <%= link_to("delete", account_topic_path(topic.board_id, topic), :method => :delete, :confirm => "Are you sure?") %></td>
-    </tr>
+  <tr>
+    <td><%= render_topic_id(topic) %></td>
+    <td><%= link_to(render_topic_title(topic), render_board_topic_path(topic)) %></td>
+    <td><%= render_topic_content(topic) %></td>
+    <td><%= link_to("edit", edit_account_topic_path(topic)) %> <%= link_to("delete", account_topic_path(topic), :method => :delete, :confirm => "Are you sure?") %></td>
+  </tr>
   <% end %>
 </table>

@@ -12,7 +12,7 @@ class Account::TopicsController < ApplicationController
 
   def update
     @topic = current_user.topics.find(params[:id])
-    if @topic.update(topic_parems)
+    if @topic.update(topic_params)
       redirect_to account_topics_path
       flash[:success] = "update success!"
     else
@@ -30,23 +30,24 @@ class Account::TopicsController < ApplicationController
 
   def new
     @topic = current_user.topics.new
+    @board = params[:board_id]
   end
 
   def create
-    @topic = current_user.topics.new(topic_parems)
-#    @topic.author = current_user
+    @topic = current_user.topics.new(topic_params)
+    @board = topic_params[:board_id]
     if @topic.save
       redirect_to board_topic_path(@topic.board_id, @topic)
       flash[:success] = "create success!"
     else
-      render :new
       flash[:warning] = "create failed"
+      render :new
     end
   end
 
 private
   
-  def topic_parems
+  def topic_params
     params.require(:topic).permit(:title, :content, :board_id, :user_id, :avatar, :remove_avatar)
   end
 
