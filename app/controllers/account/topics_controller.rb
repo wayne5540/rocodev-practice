@@ -41,6 +41,7 @@ class Account::TopicsController < ApplicationController
       flash[:success] = "create success!"
     else
       flash[:warning] = "create failed"
+      render :new
     end
   end
 
