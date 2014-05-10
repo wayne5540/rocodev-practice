@@ -30,16 +30,16 @@ class Account::TopicsController < ApplicationController
 
   def new
     @topic = current_user.topics.new
+    @board = params[:board_id]
   end
 
   def create
     @topic = current_user.topics.new(topic_params)
-#    @topic.author = current_user
+    @board = topic_params[:board_id]
     if @topic.save
       redirect_to board_topic_path(@topic.board_id, @topic)
       flash[:success] = "create success!"
     else
-      render :new
       flash[:warning] = "create failed"
     end
   end
