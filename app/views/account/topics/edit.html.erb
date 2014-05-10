@@ -5,6 +5,9 @@
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
-  <%= render "old_avatar" %>
+  <% if avatar_exists?(@topic) %>
+    <%= image_tag @topic.avatar.url(:thumb) %>
+    <%= f.input :remove_avatar, :label => "Remove image?", as: :check_boxes, :checked => false %>
+  <% end %>
   <%= f.submit "Submit", :disable_with => "Submiting..." %>
 <% end %>
