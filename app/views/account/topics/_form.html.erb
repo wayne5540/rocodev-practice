@@ -1,0 +1,7 @@
+<%= simple_form_for [:account, @topic] do |f|  %>
+  <%= f.input :title, :required => true %>
+  <%= f.input :content, :required => true %>
+  <%= f.input :avatar, :label => "Image" %>
+  <%= f.input :board_id, :as => :hidden, :input_html => {:value => @board} %>
+  <%= f.submit "Submit", :disable_with => "Submiting..." %>
+<% end %>

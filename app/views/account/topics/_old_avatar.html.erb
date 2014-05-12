@@ -1,0 +1,4 @@
+  <% if avatar_exists?(@topic) %>
+    <%= image_tag @topic.avatar.url(:thumb) %>
+    <%= f.input :remove_avatar, :label => "Remove image?", as: :radio_buttons, :checked => false %>
+  <% end %>

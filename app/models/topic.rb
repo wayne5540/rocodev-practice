@@ -10,7 +10,7 @@ class Topic < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   attr_accessor :remove_avatar
 
-  before_save :delete_avatar, if: ->{ remove_avatar && !avatar_updated_at_changed? }
+  before_save :delete_avatar, if: ->{ remove_avatar == true && !avatar_updated_at_changed? }
 
 
   def editable_by?(user)

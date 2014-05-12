@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -35,10 +34,27 @@ gem "simple_form", "~> 3.0.1"
 gem "will_paginate", "3.0.3"
 gem "compass-rails", "~> 1.1.2"
 gem "paperclip", "~> 4.1"
+gem "rvm-capistrano"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+# Use sqlite3 as the database for Active Record
+group :development do
+  gem 'sqlite3'
+#  gem "capistrano", "2.15.5"
+#  gem "capistrano-ext"
+#  gem "cape"
+  gem "capistrano", "2.15.4"
+  gem "capistrano-ext"
+  gem 'capistrano-unicorn', :require => false
+  gem "cape"
+end
+
+group :production do
+  gem 'mysql2'
 end
 
 # Use ActiveModel has_secure_password

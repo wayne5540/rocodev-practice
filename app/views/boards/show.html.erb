@@ -1,14 +1,11 @@
 
 <div class="page-header">
-  <h1><%= @board.name %></h1>
-  <p><%= @board.description %></p>
+  <h1><%= render_board_name(@board) %></h1>
+  <p><%= render_board_desc(@board) %></p>
 </div>
 
 
-
-
-
-<h2>Topics   <%= link_to("+New Topic", new_board_topic_path(@board), :class => "btn btn-mini btn-success" ) %></h2>
+<h2>Topics   <%= link_to("+New Topic", new_account_topic_path(@board, :board_id => @board.id), :class => "btn btn-mini btn-success" ) %></h2>
 
 <div class="panel panel-default">
   <div class="panel-heading">Topics</div>
