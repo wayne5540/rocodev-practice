@@ -1,3 +1,7 @@
+<ol class="breadcrumb">
+  <li><%= link_to("Home（Board List）", root_path) %></li>
+  <li class="active"><%= render_board_name(@board) %></li>
+</ol>
 
 <div class="page-header">
   <h1><%= render_board_name(@board) %></h1>
