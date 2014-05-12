@@ -1,14 +1,17 @@
 
+<%= render "topic_breadcrum" %>
+
 <div class="page-header">
-  <h1><%= @topic.title %>  <small>- Post by <%= @topic.author.name %>； -Board: <%= @topic.board.name %></small></h1>
+      <h1><%= render_topic_title(@topic) %><span class="badge">Author: <%= render_topic_author(@topic) %></span></h1>
 </div>
 
 <div class="row">
   <div class="col-md-3">
-    <div><%= image_tag(@topic.avatar.url, :class => "thumbnail size-limit centerize" )%></div>
+    <div><%= image_tag(render_topic_avatar(@topic), :class => "thumbnail size-limit centerize" )%></div>
   </div>
   <div class="col-md-9">
-    <%= simple_format(@topic.content) %>
+    <h2>Content:</h2>
+    <%= simple_format(render_topic_content(@topic)) %>
   </div>
 </div>
 

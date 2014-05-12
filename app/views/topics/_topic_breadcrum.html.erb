@@ -1,0 +1,5 @@
+<ol class="breadcrumb">
+  <li><%= link_to("Home（Board List）", root_path) %></li>
+  <li><%= link_to(render_topic_board(@topic), board_path(@topic.board_id)) %></li>
+  <li class="active"><%= render_topic_title(@topic) %></li>
+</ol>

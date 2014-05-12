@@ -2,10 +2,6 @@
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
-  <%= f.input :board_id, :as => :hidden, :input_html => {:value => params[:board_id]} %>
-  <% if @topic.avatar.exists? %>
-    <%= image_tag @topic.avatar.url(:thumb) %>
-    <%= f.input :remove_avatar, :label => "Remove image?", as: :radio_buttons, :checked => false %>
-  <% end %>
-  <%= f.submit "Submit", :disable_with => "Submiting..." %>
+  <%= f.input :board_id, :as => :hidden, :input_html => {:value => @board} %>
+  <%= f.button :submit, "Submit", :disable_with => "Submiting..." %>
 <% end %>
