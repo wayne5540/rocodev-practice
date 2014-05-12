@@ -4,16 +4,19 @@
   <div class="panel-heading">Boards</div>
   <table class="table">
     <thead>
-      <td>#</td>
-      <td>Board Name</td>
-      <td>Description</td>
+      <td class="col-md-1">#</td>
+      <td class="col-md-3">Board Name</td>
+      <td class="col-md-6">Description</td>
+      <td class="col-md-2"></td>
     </thead>
   <% @boards.each do |board| %>
     <tr>
       <td><%= render_board_id(board) %></td>
       <td><%= link_to(render_board_name(board), board_path(board)) %></td>
       <td><%= render_board_desc(board) %></td>
-      <td><%= link_to("edit", edit_admin_board_path(board)) %> <%= link_to("delete", admin_board_path(board), :method => :delete, :confirm => "Are you sure?") %></td>
+      <td>
+        <%= link_to("edit", edit_admin_board_path(board), :class => "btn btn-default") %>
+        <%= link_to("delete", admin_board_path(board), :class => "btn btn-default", :method => :delete, :confirm => "Are you sure?") %></td>
     </tr>
   <% end %>
   </table>  
