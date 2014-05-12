@@ -1,13 +1,16 @@
-<h1>Topics#edit</h1>
-<p>Find me in app/views/topics/edit.html.erb</p>
 
-<%= simple_form_for [:account, @topic] do |f|  %>
-  <%= f.input :title, :required => true %>
-  <%= f.input :content, :required => true %>
-  <%= f.input :avatar, :label => "Image" %>
-  <% if avatar_exists?(@topic) %>
-    <%= image_tag @topic.avatar.url(:thumb) %>
-    <%= f.input :remove_avatar, :label => "Remove image?", as: :check_boxes, :checked => false %>
-  <% end %>
-  <%= f.submit "Submit", :disable_with => "Submiting..." %>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h2>Edit Topic</h2>
+    <%= simple_form_for [:account, @topic] do |f|  %>
+      <%= f.input :title, :required => true %>
+      <%= f.input :content, :required => true %>
+      <%= f.input :avatar, :label => "Image" %>
+        <% if avatar_exists?(@topic) %>
+          <%= image_tag @topic.avatar.url(:thumb) %>
+          <%= f.input :remove_avatar, :label => "Remove image?", as: :radio_buttons, :checked => false %>
+        <% end %>
+      <%= f.button :submit, "Submit", :disable_with => "Submiting..." %>
+    <% end %>
+  </div>
+</div>

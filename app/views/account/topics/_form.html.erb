@@ -3,5 +3,5 @@
   <%= f.input :content, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
   <%= f.input :board_id, :as => :hidden, :input_html => {:value => @board} %>
-  <%= f.submit "Submit", :disable_with => "Submiting..." %>
+  <%= f.button :submit, "Submit", :disable_with => "Submiting..." %>
 <% end %>
