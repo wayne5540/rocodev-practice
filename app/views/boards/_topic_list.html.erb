@@ -1,3 +1,15 @@
-<% @board.topics.each do |topic| %>
-  <%= link_to(topic.title, board_topic_path(@board, topic), :class => "list-group-item") %>
-<% end %>
+
+  <table class="table">
+    <thead>
+      <td>#</td>
+      <td>Topic Name</td>
+      <td>Description</td>
+    </thead>
+  <% @board.topics.each do |topic| %>
+    <tr>
+      <td><%= topic.id %></td>
+      <td><%= link_to(topic.title, board_topic_path(@board, topic)) %></td>
+      <td><%= topic.content %></td>
+    </tr>
+  <% end %>
+  </table>  
