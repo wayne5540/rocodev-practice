@@ -28,23 +28,6 @@ class Account::TopicsController < ApplicationController
     flash[:success] = "Delete success!"
   end
 
-  def new
-    @topic = current_user.topics.new
-    @board = params[:board_id]
-  end
-
-  def create
-    @topic = current_user.topics.new(topic_params)
-    @board = topic_params[:board_id]
-    if @topic.save
-      redirect_to board_topic_path(@topic.board_id, @topic)
-      flash[:success] = "create success!"
-    else
-      flash[:warning] = "create failed"
-      render :new
-    end
-  end
-
 private
   
   def topic_params
