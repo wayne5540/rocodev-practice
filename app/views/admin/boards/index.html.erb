@@ -11,12 +11,13 @@
     </thead>
   <% @boards.each do |board| %>
     <tr>
-      <td><%= render_board_id(board) %></td>
-      <td><%= link_to(render_board_name(board), board_path(board)) %></td>
+      <td><%= board.id %></td>
+      <td><%= render_board_name_path(board) %></td>
       <td><%= render_board_desc(board) %></td>
       <td>
-        <%= link_to("edit", edit_admin_board_path(board), :class => "btn btn-default") %>
-        <%= link_to("delete", admin_board_path(board), :class => "btn btn-default", :method => :delete, :confirm => "Are you sure?") %></td>
+        <%= render_edit_admin_board_path(board)%>
+        <%= render_destroy_admin_board_path(board) %>
+      </td>
     </tr>
   <% end %>
   </table>  
