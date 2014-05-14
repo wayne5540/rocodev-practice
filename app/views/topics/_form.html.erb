@@ -1,6 +1,7 @@
 <%= simple_form_for [@board, @topic] do |f|  %>
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
+  <div class="selector-wrapper"></div>
   <%= f.input :avatar, :label => "Image" %>
   <%= f.button :submit, "Submit", :disable_with => "Submiting..." %>
 <% end %>
