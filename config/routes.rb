@@ -11,7 +11,7 @@ RocodevPractice::Application.routes.draw do
     resources :topics
   end 
   get '/feed' => 'topics#feed', :as => :feed, :format => 'rss'
-
+  get 'boards/:id/feed' => 'boards#feed', :as => :board_feed, :format => 'rss'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

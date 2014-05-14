@@ -8,4 +8,13 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
   end
 
+  def feed
+    @board = Board.find(params[:id])
+    @topics = @board.topics(:order => "created_at", :limit => 10)
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
+  end
+
 end
