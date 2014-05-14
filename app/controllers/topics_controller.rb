@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :find_board
+  before_action :find_board, :except => [:feed]
   before_action :login_required, :only => [:new, :create]
   
   def index
@@ -23,6 +23,14 @@ class TopicsController < ApplicationController
     else
       render :new
       flash[:warning] = "create failed"
+    end
+  end
+
+  def feed
+    @topics = Topic.all(:order => "created_at", :limit => 10)
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false } #index.rss.builder
     end
   end
 
