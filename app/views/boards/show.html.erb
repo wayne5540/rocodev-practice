@@ -4,7 +4,7 @@
 </ol>
 
 <div class="page-header">
-  <h1><%= render_board_name(@board) %></h1>
+  <h1><%= render_board_name(@board) %> <%= link_to("RSS", board_feed_path(@board), :class => "btn btn-warning", :target => "_blank" )%></h1>
   <p><%= render_board_desc(@board) %></p>
 </div>
 
