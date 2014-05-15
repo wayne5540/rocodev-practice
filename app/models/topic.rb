@@ -13,7 +13,7 @@ class Topic < ActiveRecord::Base
   before_save :delete_avatar, if: ->{ remove_avatar == true && !avatar_updated_at_changed? }
 
 
-  scope :pop, -> {order("views_count DESC")}
+  scope :sort_by_views_count, -> {order("views_count DESC")}
 
   def editable_by?(user)
     user && user == author

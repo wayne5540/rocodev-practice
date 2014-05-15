@@ -6,7 +6,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @topics = @board.topics.pop
+    @topics = @board.topics.sort_by_views_count
   end
 
   def feed
