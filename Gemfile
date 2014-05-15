@@ -38,6 +38,7 @@ gem "rvm-capistrano"
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "settingslogic"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -54,6 +55,8 @@ group :development do
   gem "capistrano-ext"
   gem 'capistrano-unicorn', :require => false
   gem "cape"
+  gem "letter_opener"
+  gem "better_errors"
 end
 
 group :production do
