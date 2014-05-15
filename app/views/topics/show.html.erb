@@ -14,3 +14,8 @@
     <%= simple_format(render_topic_content(@topic)) %>
   </div>
 </div>
+<span id="topic-collection">
+  <%= render_account_collection_link(current_user, @topic) %>
+</span>
+
+

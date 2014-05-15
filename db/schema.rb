@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515025336) do
+ActiveRecord::Schema.define(version: 20140515033744) do
 
   create_table "boards", force: true do |t|
     t.string   "name"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 20140515025336) do
     t.datetime "avatar_updated_at"
     t.integer  "views_count",         default: 0
   end
+
+  create_table "user_collections", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_collections", ["topic_id"], name: "index_user_collections_on_topic_id"
+  add_index "user_collections", ["user_id"], name: "index_user_collections_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

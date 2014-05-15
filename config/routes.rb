@@ -1,4 +1,5 @@
 RocodevPractice::Application.routes.draw do
+  get "collections/index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root "boards#index"
   resources :boards do
@@ -9,6 +10,7 @@ RocodevPractice::Application.routes.draw do
   end
   namespace :account do
     resources :topics
+    resources :collections
   end 
   get '/feed' => 'topics#feed', :as => :feed, :format => 'rss'
   get 'boards/:id/feed' => 'boards#feed', :as => :board_feed, :format => 'rss'
