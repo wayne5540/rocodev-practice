@@ -8,6 +8,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = @board.topics.find(params[:id])
+    increment_topic_views_count
   end
 
   def new
@@ -38,6 +39,10 @@ private
   
   def find_board
     @board = Board.find(params[:board_id])
+  end
+
+  def increment_topic_views_count
+    @topic.increment!(:views_count)
   end
 
   def topic_params
