@@ -40,6 +40,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem "settingslogic"
 
+gem "mailgun-rails", "~> 0.1.1"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

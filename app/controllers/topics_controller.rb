@@ -19,9 +19,9 @@ class TopicsController < ApplicationController
     @topic = @board.topics.build(topic_params)
     @topic.author = current_user
     if @topic.save
-      TopicMailer.topic_create(@topic).deliver
       redirect_to board_topic_path(@board, @topic)
       flash[:success] = "create success!"
+      TopicMailer.topic_create(@topic).deliver
     else
       render :new
       flash[:warning] = "create failed"

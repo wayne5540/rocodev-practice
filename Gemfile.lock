@@ -72,6 +72,7 @@ GEM
     compass-rails (1.1.7)
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
+    curb (0.8.5)
     devise (3.0.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -102,6 +103,10 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailgun-rails (0.1.1)
+      actionmailer
+      activesupport
+      curb
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.10.0)
@@ -215,6 +220,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   letter_opener
+  mailgun-rails (~> 0.1.1)
   mysql2
   omniauth
   omniauth-facebook
