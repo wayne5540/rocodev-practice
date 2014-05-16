@@ -1,5 +1,5 @@
 
 <% tags.each do |tag| %>
-  <%= link_to(tag.name, "#", :class => "label label-success tag") %>
+  <%= link_to(tag.name, board_path(@board, tag: tag), :class => "label label-success tag") %>
 <% end %>
 
