@@ -11,7 +11,7 @@ class TopicMailer < ActionMailer::Base
     @board = topic.board
     @user = topic.author
     @mail = @user.email
-    @link = board_topic_url(@board, @topic, host: 'rocodev-practice.dev')
+    @link = board_topic_url(@board, @topic)
     @greeting = "Hi"
 
     @subject = "您已成功在Board: #{@board.name}內新增了一篇Topic~"

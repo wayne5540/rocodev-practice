@@ -70,6 +70,9 @@ RocodevPractice::Application.configure do
     :api_key  => Setting.mailgun.api_key,
     :api_host => Setting.mailgun.api_host
   }
+    config.action_mailer.default_url_options = {
+    :host => Setting.domain.sub("http://", "")
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
