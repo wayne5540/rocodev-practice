@@ -11,8 +11,22 @@
 .inline-block {
   display: inline-block;
 }
-.tags{
+.tag{
   margin-right: 5px;
+}
+.tags{
+  li{ 
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .sellected{
+    background-color: #5cb85c;
+  }
+}
+
+ul.tags{
+  list-style: none;
+  padding: 0px;
 }
 
 

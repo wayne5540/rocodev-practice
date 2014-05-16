@@ -12,10 +12,11 @@ class Topic < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   attr_accessor :remove_avatar
 
-  before_save :delete_avatar, if: ->{ remove_avatar == true && !avatar_updated_at_changed? }
+  before_save :delete_avatar, if: -> { remove_avatar == true && !avatar_updated_at_changed? }
 
 
   scope :sort_by_views_count, -> {order("views_count DESC")}
+  scope :in_tag, -> (tag_id) {joins(:tags).where(:tags => {:id => tag_id})}
 
   def editable_by?(user)
     user && user == author
