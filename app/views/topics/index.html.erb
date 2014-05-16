@@ -7,7 +7,7 @@
     </thead>
   <% @topics.each do |topic| %>
     <tr>
-      <td><%= render_topic_id(topic)%></td>
+      <td><%= topic.id %></td>
       <td><%= link_to(render_topic_title(topic), [@board, topic]) %></td>
       <td><%= render_topic_content(topic) %></td>
     </tr>
