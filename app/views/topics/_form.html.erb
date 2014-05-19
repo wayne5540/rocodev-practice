@@ -2,6 +2,7 @@
   <%= f.input :title, :required => true %>
   <%= f.input :content, :required => true %>
   <div class="selector-wrapper"></div>
+  <%= f.association :tags, :as => :check_boxes, :required => true %>
   <%= f.input :avatar, :label => "Image" %>
   <%= f.button :submit, "Submit", :disable_with => "Submiting..." %>
 <% end %>

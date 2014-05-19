@@ -38,6 +38,12 @@ gem "rvm-capistrano"
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem "settingslogic"
+
+gem "mailgun-rails", "~> 0.1.1"
+
+gem "cells"
+gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -54,6 +60,8 @@ group :development do
   gem "capistrano-ext"
   gem 'capistrano-unicorn', :require => false
   gem "cape"
+  gem "letter_opener"
+  gem "better_errors"
 end
 
 group :production do

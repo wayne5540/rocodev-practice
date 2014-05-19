@@ -10,6 +10,7 @@
           <%= image_tag @topic.avatar.url(:thumb) %>
           <%= f.input :remove_avatar, :label => "Remove image?", as: :radio_buttons, :checked => false %>
         <% end %>
+      <%= f.association :tags, :as => :check_boxes, :required => true %>
       <%= f.button :submit, "Submit", :disable_with => "Submiting..." %>
     <% end %>
   </div>

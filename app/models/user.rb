@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :topics
   has_many :boards
+  has_many :user_collections, :dependent => :destroy
+  has_many :collections, :through => :user_collections, :source => :topic
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -25,6 +27,10 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def has_collection?(topic)
+    collections.include?(topic)
   end
 
 end

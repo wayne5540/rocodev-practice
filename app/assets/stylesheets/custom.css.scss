@@ -7,9 +7,29 @@
   max-width: 100%;
 }
 
-.page-header h1{
+
+.inline-block {
   display: inline-block;
 }
+.tag{
+  margin-right: 5px;
+}
+.tags{
+  li{ 
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  .sellected{
+    background-color: #5cb85c;
+  }
+}
+
+ul.tags{
+  list-style: none;
+  padding: 0px;
+}
+
+
 
 
 /* User sign in and sign forms. 

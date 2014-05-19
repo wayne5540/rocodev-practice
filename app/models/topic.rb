@@ -1,6 +1,8 @@
 class Topic < ActiveRecord::Base
   belongs_to :board
   belongs_to :author, :class_name => "User", :foreign_key => :user_id
+  has_many :tags_topics, :dependent => :destroy
+  has_many :tags, :through => :tags_topics
   validates :title, :presence => true, :length => {:maximum => 20}
   validates :content, :presence => true, :length => {:maximum => 300}
 
@@ -10,8 +12,11 @@ class Topic < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   attr_accessor :remove_avatar
 
-  before_save :delete_avatar, if: ->{ remove_avatar == true && !avatar_updated_at_changed? }
+  before_save :delete_avatar, if: -> { remove_avatar == true && !avatar_updated_at_changed? }
 
+
+  scope :sort_by_views_count, -> {order("views_count DESC")}
+  scope :in_tag, -> (tag_id) {joins(:tags).where(:tags => {:id => tag_id})}
 
   def editable_by?(user)
     user && user == author

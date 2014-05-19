@@ -4,12 +4,14 @@
       <td>#</td>
       <td>Topic Name</td>
       <td>Description</td>
+      <td>瀏覽量</td>
     </thead>
-  <% @board.topics.each do |topic| %>
+  <% topics.each do |topic| %>
     <tr>
       <td><%= topic.id %></td>
-      <td><%= link_to(topic.title, board_topic_path(@board, topic)) %></td>
+      <td><%= link_to(topic.title, board_topic_path(topic.board_id, topic)) %></td>
       <td><%= topic.content %></td>
+      <td><%= topic.views_count %></td>
     </tr>
   <% end %>
   </table>  
