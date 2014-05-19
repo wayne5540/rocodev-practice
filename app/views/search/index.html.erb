@@ -1,0 +1,11 @@
+<h1>Topic搜尋結果</h1>
+<% if @query_string.present? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">Topics</div>
+    <%= render :partial => "boards/topic_list", locals: { topics: @search } %>
+  </div>
+<% else %>
+
+<div>Sorry, no result.</div>
+
+<% end %>

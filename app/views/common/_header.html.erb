@@ -3,6 +3,12 @@
     <div class="navbar-header">
       <%= link_to("Rocodev Disq", root_path, :class => "navbar-brand") %>
     </div>
+    <%= form_tag search_path, :class => "navbar-form navbar-left", :method => :get do %>
+    <div class="form-group">
+      <input type="text" name="q" class="form-control" value="<%= params[:q] %>" placeholder="搜尋Topic" />
+    </div>
+    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+    <% end %>
     <ul class="nav navbar-nav navbar-right">
       <li><%= link_to("所有看版", boards_path) %></li>
 

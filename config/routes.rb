@@ -1,6 +1,5 @@
 RocodevPractice::Application.routes.draw do
-  get "search/index"
-  get "collections/index"
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root "boards#index"
   resources :boards do
@@ -15,6 +14,9 @@ RocodevPractice::Application.routes.draw do
   end 
   get '/feed' => 'topics#feed', :as => :feed, :format => 'rss'
   get 'boards/:id/feed' => 'boards#feed', :as => :board_feed, :format => 'rss'
+  get "/search" => "search#index", :as => "search"
+  get "collections/index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

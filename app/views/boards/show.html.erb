@@ -17,7 +17,7 @@
   <div class="col-md-10">
     <div class="panel panel-default">
       <div class="panel-heading">Topics</div>
-      <%= render "topic_list" %>
+      <%= render :partial => "topic_list", locals: { topics: @topics } %>
     </div>
   </div>
 </div>
