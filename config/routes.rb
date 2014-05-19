@@ -1,4 +1,5 @@
 RocodevPractice::Application.routes.draw do
+  get "search/index"
   get "collections/index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root "boards#index"
