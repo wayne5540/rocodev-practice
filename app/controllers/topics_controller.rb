@@ -30,7 +30,7 @@ class TopicsController < ApplicationController
   end
 
   def feed
-    @topics = Topic.all(:order => "created_at", :limit => 10)
+    @topics = Topic.sort_by_created_time.limit(5)
     respond_to do |format|
       format.html
       format.rss { render :layout => false } #index.rss.builder

@@ -13,7 +13,7 @@ class BoardsController < ApplicationController
 
   def feed
     @board = Board.find(params[:id])
-    @topics = @board.topics(:order => "created_at", :limit => 10)
+    @topics = @board.topics.sort_by_created_time.limit(5)
     respond_to do |format|
       format.html
       format.rss { render :layout => false }
