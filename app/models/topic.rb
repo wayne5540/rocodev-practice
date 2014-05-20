@@ -16,7 +16,7 @@ class Topic < ActiveRecord::Base
 
 
   scope :sort_by_views_count, -> {order("views_count DESC")}
-  scope :sort_by_created_time, -> {order("created_at")}
+  scope :recent, -> {order("created_at")}
   scope :in_tag, -> (tag_id) {joins(:tags).where(:tags => {:id => tag_id})}
 
   def editable_by?(user)
