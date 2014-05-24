@@ -21,6 +21,8 @@ class Topic < ActiveRecord::Base
   belongs_to :author, :class_name => "User", :foreign_key => :user_id
   has_many :tags_topics, :dependent => :destroy
   has_many :tags, :through => :tags_topics
+  has_many :comments, :as => :commentalbe
+  
   validates :title, :presence => true, :length => {:maximum => 20}
   validates :content, :presence => true, :length => {:maximum => 300}
 

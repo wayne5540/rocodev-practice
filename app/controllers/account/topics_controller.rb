@@ -31,7 +31,7 @@ class Account::TopicsController < ApplicationController
 private
   
   def topic_params
-    params.require(:topic).permit(:title, :content, :board_id, :user_id, :avatar, :remove_avatar)
+    params.require(:topic).permit(:title, :content, :board_id, :user_id, :avatar, :remove_avatar, :tag_ids => [])
   end
 
   def find_board
