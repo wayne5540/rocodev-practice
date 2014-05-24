@@ -59,6 +59,7 @@ group :development do
   gem "cape"
   gem "letter_opener"
   gem "better_errors"
+  gem "annotate"
 end
 
 group :production do

@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  tag_id     :integer
-#  work_id    :integer
+#  topic_id   :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
