@@ -1,29 +1,39 @@
 class CommentsController < ApplicationController
+  before_action :login_required, :only => [:create]
   def index
-    @commentable = find_commentable
-    @comments = @commentable.comments
+    #@commentable =  set_commentable
+    #@comments = Comment.where(:commentable => @commentable)
+
+    #TODO: user comments page
+    flash[:warning] = "No Such Page"
+    redirect_to root_path
   end
 
   def create
-    @commentable = find_commentable
-    @comment = @commentable.comments.build(params[:comment])
+    @commentable = set_commentable
+    @comment = @commentable.comments.build(comment_params)
     if @comment.save
       flash[:notice] = "Successfully saved comment."
-      redirect_to :id => nil
+      redirect_to :back
     else
-      render :action => 'new'
+      render :back
     end
   end
 
+  # TODO: user destroy and update
+
   protected
 
-  def find_commentable
-    params.each do |name, value|
-      if name =~ /(.+)_id$/
-        return $1.classify.constantize.find(value)
-      end
+  def set_commentable
+    if params[:topic_id]
+      @commentable = Topic.find(params[:topic_id])
+    elsif params[:board_id]
+      @commentable = Board.find(params[:board_id])
     end
-    nil
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content, :commentable_id, :commentable_type)
   end
 
   

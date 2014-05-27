@@ -58,7 +58,10 @@ group :development do
   gem 'capistrano-unicorn', :require => false
   gem "cape"
   gem "letter_opener"
+  
   gem "better_errors"
+  gem "binding_of_caller"
+
   gem "annotate"
 end
 

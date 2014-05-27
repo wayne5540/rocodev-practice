@@ -10,14 +10,10 @@ RocodevPractice::Application.routes.draw do
     resources :comments
   end
   namespace :admin do 
-    resources :boards do
-      resources :comments
-    end
+    resources :boards
   end
   namespace :account do
-    resources :topics do
-      resources :comments
-    end
+    resources :topics
     resources :collections
   end 
   get '/feed' => 'topics#feed', :as => :feed, :format => 'rss'

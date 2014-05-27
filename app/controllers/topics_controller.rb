@@ -10,6 +10,8 @@ class TopicsController < ApplicationController
     @topic = @board.topics.find(params[:id])
     @tags = @topic.tags
     increment_topic_views_count
+    @new_comment = Comment.new
+    @comments = @topic.comments
   end
 
   def new
