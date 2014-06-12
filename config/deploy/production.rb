@@ -31,6 +31,8 @@ set :rails_env, "production"
 set :scm_verbose, true
 set :use_sudo, false
 
+set :delayed_job_command, "bin/delayed_job"
+
 
 namespace :deploy do
 
