@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 require 'rvm/capistrano'
+require "delayed/recipes"
+
 default_environment["PATH"] = "/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin"
 
 set :application, "my_project"
@@ -57,12 +59,20 @@ namespace :my_tasks do
 
 end
 namespace :delayed_job do
+
+  desc "Delayed_job start"
   task :start do
     run "RAILS_ENV=#{rails_env} bin/delayed_job start"
   end
 
+  desc "Delayed_job stop"
   task :stop do
     run "RAILS_ENV=#{rails_env} bin/delayed_job stop"
+  end
+
+  desc "Delayed_job restart"
+  task :restart do
+    run "RAILS_ENV=#{rails_env} bin/delayed_job restart"
   end
 end
 
@@ -75,6 +85,8 @@ namespace :remote_rake do
 end
 
 after "deploy:finalize_update", "my_tasks:symlink"
-
+after "deploy:stop",    "delayed_job:stop"
+after "deploy:start",   "delayed_job:start"
+after "deploy:restart", "delayed_job:restart"
 
 
