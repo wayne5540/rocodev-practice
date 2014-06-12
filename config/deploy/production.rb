@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 require 'rvm/capistrano'
-#require "delayed/recipes"
+require "delayed/recipes"
 
 default_environment["PATH"] = "/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin"
 
@@ -31,7 +31,7 @@ set :rails_env, "production"
 set :scm_verbose, true
 set :use_sudo, false
 
-#set :delayed_job_command, "bin/delayed_job"
+set :delayed_job_command, "bin/delayed_job"
 
 
 namespace :deploy do
