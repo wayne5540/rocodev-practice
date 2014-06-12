@@ -3,8 +3,8 @@
 
 <div class="page-header">
       <h1><%= render_topic_title(@topic) %><span class="badge">Author: <%= render_topic_author(@topic) %></span></h1>
+      分類： <%= render :partial => "topic_tags", locals: { tags: @tags} %>
 </div>
-
 <div class="row">
   <div class="col-md-3">
     <div><%= image_tag(render_topic_avatar(@topic), :class => "thumbnail size-limit centerize" )%></div>
@@ -14,8 +14,13 @@
     <%= simple_format(render_topic_content(@topic)) %>
   </div>
 </div>
+<span id="topic-collection">
+  <%= render_account_collection_link(current_user, @topic) %>
+</span>
 
-
-
+<h2>New Comment</h2>
+<%= render :partial => "common/comment_form", locals: { board: @board, topic: @topic} %>
+<h2>Comments</h2>
+<%= render :partial => "common/comment_list", locals: { comments: @comments} %>
 
 

@@ -4,14 +4,25 @@
 </ol>
 
 <div class="page-header">
-  <h1><%= render_board_name(@board) %></h1>
+  <h1><%= render_board_name(@board) %> <%= render_new_topic_path(@board, @topic)%> <%= link_to("RSS", board_feed_path(@board), :class => "btn btn-warning", :target => "_blank" )%></h1>
   <p><%= render_board_desc(@board) %></p>
 </div>
 
 
-<h2>Topics   <%= render_new_topic_path(@board, @topic)%></h2>
 
-<div class="panel panel-default">
-  <div class="panel-heading">Topics</div>
-  <%= render "topic_list" %>
+<div class="row">
+  <div class="col-md-2">
+    <%= render "board_tags" %>
+  </div>
+  <div class="col-md-10">
+    <div class="panel panel-default">
+      <div class="panel-heading">Topics</div>
+      <%= render "topic_list" %>
+    </div>
+  </div>
 </div>
+
+<h2>New Comment</h2>
+<%= render :partial => "common/comment_form", locals: { board: @board, topic: nil} %>
+<h2>Comments</h2>
+<%= render :partial => "common/comment_list", locals: { comments: @comments} %>
