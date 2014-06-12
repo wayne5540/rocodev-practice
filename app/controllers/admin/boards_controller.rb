@@ -42,6 +42,13 @@ class Admin::BoardsController < ApplicationController
     flash[:success] = "Delete success!"
   end
 
+  def generate_comments
+    @board = Board.find(params[:id])
+    @board.delay.generate_robot_comments
+    redirect_to board_path(@board)
+    flash[:success] = "Add Robot Comment ING..."
+  end
+
 private
 
   def board_params

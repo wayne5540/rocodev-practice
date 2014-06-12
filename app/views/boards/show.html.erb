@@ -22,6 +22,8 @@
   </div>
 </div>
 
+<%= button_to("新增機器人留言", generate_comments_admin_board_path(@board)) %>
+
 <h2>New Comment</h2>
 <%= render :partial => "common/comment_form", locals: { board: @board, topic: nil} %>
 <h2>Comments</h2>

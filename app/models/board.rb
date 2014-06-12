@@ -20,4 +20,8 @@ class Board < ActiveRecord::Base
   validates :description, :presence => true
 
 
+  def generate_robot_comments
+    10.times{ |i| self.comments.create(content:"robot comment #{i}") }
+  end
+
 end

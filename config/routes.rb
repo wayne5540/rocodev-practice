@@ -10,7 +10,9 @@ RocodevPractice::Application.routes.draw do
     resources :comments
   end
   namespace :admin do 
-    resources :boards
+    resources :boards do
+      post 'generate_comments', on: :member
+    end
   end
   namespace :account do
     resources :topics
