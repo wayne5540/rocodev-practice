@@ -56,7 +56,15 @@ namespace :my_tasks do
   end
 
 end
+namespace :delayed_job do
+  task :start do
+    run "RAILS_ENV=#{rails_env} bin/delayed_job start"
+  end
 
+  task :stop do
+    run "RAILS_ENV=#{rails_env} bin/delayed_job stop"
+  end
+end
 
 
 namespace :remote_rake do
@@ -67,3 +75,6 @@ namespace :remote_rake do
 end
 
 after "deploy:finalize_update", "my_tasks:symlink"
+
+
+
