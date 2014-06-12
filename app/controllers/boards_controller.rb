@@ -9,7 +9,6 @@ class BoardsController < ApplicationController
     #oh my god so dirty...
     set_topic_for_show
     @tags = Tag.all
-    @new_comment = Comment.new
     @comments = @board.comments
   end
 

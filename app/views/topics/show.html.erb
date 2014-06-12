@@ -19,15 +19,8 @@
 </span>
 
 <h2>New Comment</h2>
-<%= form_for [@board, @topic, @new_comment] do |f| %>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, :rows => 5 %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Add comment" %>
-  </div>
-<% end %>
+<%= render :partial => "common/comment_form", locals: { board: @board, topic: @topic} %>
+<h2>Comments</h2>
 <%= render :partial => "common/comment_list", locals: { comments: @comments} %>
 
 
