@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 require 'rvm/capistrano'
-require "delayed/recipes"
+#require "delayed/recipes"
 
 default_environment["PATH"] = "/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin"
 
@@ -31,7 +31,7 @@ set :rails_env, "production"
 set :scm_verbose, true
 set :use_sudo, false
 
-set :delayed_job_command, "bin/delayed_job"
+#set :delayed_job_command, "bin/delayed_job"
 
 
 namespace :deploy do
@@ -60,24 +60,6 @@ namespace :my_tasks do
   end
 
 end
-namespace :delayed_job do
-
-  desc "Delayed_job start"
-  task :start do
-    run "RAILS_ENV=#{rails_env} bin/delayed_job start"
-  end
-
-  desc "Delayed_job stop"
-  task :stop do
-    run "RAILS_ENV=#{rails_env} bin/delayed_job stop"
-  end
-
-  desc "Delayed_job restart"
-  task :restart do
-    run "RAILS_ENV=#{rails_env} bin/delayed_job restart"
-  end
-end
-
 
 namespace :remote_rake do
   desc "Run a task on remote servers, ex: cap staging rake:invoke task=cache:clear"
