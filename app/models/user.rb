@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook]
 
-
+  after_save :set_role
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -55,5 +55,22 @@ class User < ActiveRecord::Base
   def has_collection?(topic)
     collections.include?(topic)
   end
+
+  def set_role
+    if is_admin_email? && !self.is_admin
+      set_admin
+    end
+  end
+
+  def is_admin_email?
+    Setting.admin_emails.include?(email)
+  end
+
+  def set_admin
+    self.is_admin = true
+    self.save
+  end
+
+
 
 end
