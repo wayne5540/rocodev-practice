@@ -78,6 +78,7 @@ GEM
       compass (>= 0.12.2)
       sprockets (<= 2.11.0)
     curb (0.8.5)
+    daemons (1.1.9)
     debug_inspector (0.0.2)
     delayed_job (4.0.1)
       activesupport (>= 3.0, < 4.2)
@@ -228,6 +229,7 @@ DEPENDENCIES
   capistrano-unicorn
   coffee-rails (~> 4.0.0)
   compass-rails (~> 1.1.2)
+  daemons
   delayed_job_active_record
   devise (= 3.0.2)
   jbuilder (~> 1.2)
